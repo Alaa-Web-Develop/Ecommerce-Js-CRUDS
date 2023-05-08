@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Varela+Round&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /*any padding or border reduse from origni width and height*/
+}
+body{
+    font-family: 'Varela Round', sans-serif;
+}
+.container{
+    width: 80%;
+    margin: auto;
+}
+header{
+    height: 60px;
+    background-color: #333;
+    padding: 10px 0;
+}
+.header-content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header-content .brand{
+    font-size: 32px;
+    text-decoration: none;
+    color: white;
+}
+nav ul{
+    display: flex;
+    
+    list-style: none;
+}
+nav ul#user_info{
+    display: none;
+    align-items: center; /*بعد ما يتغير لفليكس*/}
+
+nav ul#user_info li i{
+    color: #fff;
+    font-size: 15px ;
+    cursor: pointer;}
+
+nav ul#user_info li{
+    position: relative;/*for badge*/;
+    margin: 0 7px;}
+
+    nav ul#user_info li .carts-product{
+        position: absolute;
+        width: 200px;
+        transform: translate(-42px,0);
+        background-color: rgba(119, 119, 119, 0.268);
+        top: 42px;
+        padding: 10px;
+        border: 1px solid greenyellow;
+        color: black;
+        display: none ;
+    }
+    .carts-product a{
+        display: block;
+        color: #fff;
+        margin: 0;
+        padding: 10px;
+        text-align: center;
+        text-decoration: none;
+        background-color: darkgreen;
+
+    }
+
+nav ul#user_info li .badge{
+    width: 20px;
+    height: 20px;
+    font-size:10px;
+    background-color: red;
+    color: #FFF;
+    text-align: center;
+    display:block ;
+    position: absolute;
+    border-radius: 50%;
+    top: -12px;right: -10px;
+    line-height: 20px;/*توسطنه بالطول بنفس حجم الهايت*/;
+    display: none;/*لعدم ظهوره فارغا فى البداية*/
+}
+nav li a{
+    display: block;
+    color: white;
+    min-width: 50px; /*عشان ابعد اللينكات عن بعض*/
+    padding: 5px;
+    margin:  0 5px;
+}
+/*=========form=====================================*/
+.section-form{
+    /*Hero Image*/
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+    width: 40%;
+    text-align: center;
+    background-color:#bc6ff1 ;
+    padding: 20px;
+}
+.section-form h2{
+    font-size: 30px;
+    letter-spacing: 2px;
+    color: blue; /*color palette*/
+}
+
+.section-form form input{
+    display: block;
+    width: 100%;
+    margin: 5px 0;
+    height: 40px;
+    border: 1px solid #ddd;
+    padding: 5px;
+
+    font-family: 'Varela Round', sans-serif;/*لياخذ البلاس هولدر نفس الفونت فاميلى للبودى*/
+
+    outline: 0;
+
+}
+.section-form form input[type=submit]{
+    font-size: 25px;
+    text-transform: uppercase;
+    height: auto;
+    cursor: pointer;
+    
+}
+.section-form form input[type="submit"]:hover{
+    opacity: 0.8;
+}
+/*=====products=================================*/
+.products{
+    width: 60%;
+    margin: 10px 0;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, .1);
+
+}
+.product-item{
+    padding: 10px;
+    display: flex;
+    width: 100%;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    min-height: 150px; /*الديفات طلعت باحجام مختلفة*/
+   
+}
+.product-item-img{ /*BEM التسمية باسم البارنت بتوفر النستنج*/
+    width: 25%;
+    margin-right: 10px;
+}
+.product-item-desc a{
+    display: block;
+    font-size: 25px;
+    color: #333;
+    cursor: pointer;
+}
+.product-item-action{
+    flex: 1; /*to fill abig part*/
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.product-item-action .add-to-cart{
+    display: block;/*عندما اصبح بلوك مش هيتوسطن بتيكست الاين*/
+    margin-left: auto;/*حزقوا من ناحية الشمال فيروح فى اليمين وممكن احركه فى المين باستخدام الفلوت*/
+    background-color: green;
+    color: #fff;
+    border: 0;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    font-family: 'Varela Round', sans-serif;/*عشان الزرار مش بياخد الفونت فاميلى بتاع الصفحة*/
+
+}
+.product-item-action .favorite{
+    cursor: pointer;
+    display: block;
+    width: 20px; /*عشان المسافة ال بيظهر فيها المؤشر*/
+    margin-left: auto;/*يروح لاقصى اليمين*/
+
+}
+/*==============item-details=======*/
+.item-details img{
+    width: 100%;
+    height: 400px;
+    object-fit: cover; /*لعدم ظهور الصورة مضغوطة بسبب الهايت*/
+    margin: 10px 0;
+    padding: 2px;
+    border: 1px solid #333;
+}
+/*============index search=============*/
+#search{
+    display: block;
+    margin: 10px 0;
+    width: 100%;
+    height:40px;
+    padding: 5px;
+    border: 1px solid #b5b5b5;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: bold;
+
+    font-family: 'Varela Round', sans-serif;
+
+}
+/*===========create product============*/
+.create-product-icon{
+  position: fixed;
+  bottom: 15px;
+  right: 35px;
+  width: 50px;
+  height: 50px;
+  background-color: #52057b;
+  color: #fff;  
+  text-decoration: none;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 50px;
+}
+.create-product-icon:hover{
+    opacity: 0.8;
+}
